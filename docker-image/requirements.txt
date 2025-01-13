@@ -1,8 +1,6 @@
-fastapi
-uvicorn
-Pillow
-ultralytics
 gradio
-pydantic
+ultralytics
+pillow
 numpy
+opencv-python-headless
 matplotlib
