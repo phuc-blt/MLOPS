@@ -1,6 +1,8 @@
-gradio
+fastapi
+uvicorn
+Pillow
 ultralytics
-pillow
+gradio
+pydantic
 numpy
-opencv-python-headless
 matplotlib
