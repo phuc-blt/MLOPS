@@ -1,0 +1,6 @@
+train: /workspace/phucnt/MLOP/data/train
+val: /workspace/phucnt/MLOP/data/valid
+test: /workspace/phucnt/MLOP/data/test/home/phuc/MLOP/data/test
+num_classes: 4
+nc : 4
+names: ['Brain Tumor']

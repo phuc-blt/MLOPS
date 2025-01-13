@@ -1,0 +1,15 @@
+artifact_uri: file:///home/phuc/MLOP/mlruns/546819358636663254/cb912a238cbe4475868ad749e9277aa0/artifacts
+end_time: 1736738370978
+entry_point_name: ''
+experiment_id: '546819358636663254'
+lifecycle_stage: active
+run_id: cb912a238cbe4475868ad749e9277aa0
+run_name: bedecked-bug-319
+run_uuid: cb912a238cbe4475868ad749e9277aa0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736735777546
+status: 3
+tags: []
+user_id: phuc

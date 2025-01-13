@@ -1,0 +1,15 @@
+artifact_uri: file:///home/phuc/MLOP/mlruns/546819358636663254/3739763836e54ce1904ed6e019324ad7/artifacts
+end_time: 1736735725297
+entry_point_name: ''
+experiment_id: '546819358636663254'
+lifecycle_stage: active
+run_id: 3739763836e54ce1904ed6e019324ad7
+run_name: defiant-mouse-496
+run_uuid: 3739763836e54ce1904ed6e019324ad7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736735717274
+status: 4
+tags: []
+user_id: phuc

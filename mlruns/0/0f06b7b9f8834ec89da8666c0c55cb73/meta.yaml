@@ -1,0 +1,15 @@
+artifact_uri: file:///workspace/phucnt/MLOP/mlruns/0/0f06b7b9f8834ec89da8666c0c55cb73/artifacts
+end_time: 1736700969407
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0f06b7b9f8834ec89da8666c0c55cb73
+run_name: shivering-ray-708
+run_uuid: 0f06b7b9f8834ec89da8666c0c55cb73
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736700916325
+status: 3
+tags: []
+user_id: phucnt
