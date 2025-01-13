@@ -29,26 +29,29 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: "main", url: 'https://github.com/phuc-blt/MLOPS.git'
+                withChecks('Clone Repository') {
+                    publishChecks name: 'Clone Repository', status: 'COMPLETED', conclusion: 'SUCCESS', summary: 'Repository cloned successfully.'
+                }
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                dir('docker-image') { 
+                dir('docker-image') { // Move into the docker-image directory
                     script {
                         try {
                             sh '''
                             #!/bin/bash
 
                             # Remove existing Docker image
-                            if sudo docker images | grep -q "api"; then
+                            if sudo /usr/local/bin/docker images | grep -q "api"; then
                                 echo "Removing existing Docker image..."
-                                sudo docker rmi -f api
+                                sudo /usr/local/bin/docker rmi -f api
                             fi
 
                             # Build the Docker image
                             echo "Building the Docker image..."
-                            sudo docker build -t api .
+                            sudo /usr/local/bin/docker build -t api .
                             '''
 
                             withChecks('Build Docker Image') {
@@ -75,15 +78,15 @@ pipeline {
                         #!/bin/bash
 
                         # Stop and remove any existing container
-                        if sudo docker ps -a --format '{{.Names}}' | grep -q "^api_running$"; then
+                        if sudo /usr/local/bin/docker ps -a --format '{{.Names}}' | grep -q "^api_running$"; then
                             echo "Container 'api_running' already exists. Removing it..."
-                            sudo docker stop api_running
-                            sudo docker rm -f api_running
+                            sudo /usr/local/bin/docker stop api_running
+                            sudo /usr/local/bin/docker rm -f api_running
                         fi
 
                         # Run the Docker container
                         echo "Running the Docker container..."
-                        sudo docker run --name api_running -p 8000:8000 -d api
+                        sudo /usr/local/bin/docker run --name api_running -p 8000:8000 -d api
                         '''
 
                         withChecks('Run Docker Container') {
