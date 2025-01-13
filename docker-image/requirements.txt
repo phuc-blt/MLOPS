@@ -2,3 +2,7 @@ fastapi
 uvicorn
 Pillow
 ultralytics
+gradio
+pydantic
+numpy
+matplotlib
