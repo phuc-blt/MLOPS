@@ -18,7 +18,7 @@ import gradio as gr
 app = FastAPI()
 
 # Load the YOLO model
-model = YOLO("/workspace/phucnt/MLOP/docker-image/best.pt")  # Replace "best.pt" with the correct path to your trained model
+model = YOLO("/home/phuc/MLOPS/docker-image/best.pt")  # Replace "best.pt" with the correct path to your trained model
 def detect_objects(image):
     # Run YOLO model on input image
     results = model(image)
