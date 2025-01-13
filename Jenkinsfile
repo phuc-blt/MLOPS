@@ -34,21 +34,21 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('docker-image') { // Move into the docker-image directory
+                dir('docker-image') { 
                     script {
                         try {
                             sh '''
                             #!/bin/bash
 
                             # Remove existing Docker image
-                            if docker images | grep -q "api"; then
+                            if sudo docker images | grep -q "api"; then
                                 echo "Removing existing Docker image..."
-                                docker rmi -f api
+                                sudo docker rmi -f api
                             fi
 
                             # Build the Docker image
                             echo "Building the Docker image..."
-                            docker build -t api .
+                            sudo docker build -t api .
                             '''
 
                             withChecks('Build Docker Image') {
@@ -75,15 +75,15 @@ pipeline {
                         #!/bin/bash
 
                         # Stop and remove any existing container
-                        if docker ps -a --format '{{.Names}}' | grep -q "^api_running$"; then
+                        if sudo docker ps -a --format '{{.Names}}' | grep -q "^api_running$"; then
                             echo "Container 'api_running' already exists. Removing it..."
-                            docker stop api_running
-                            docker rm -f api_running
+                            sudo docker stop api_running
+                            sudo docker rm -f api_running
                         fi
 
                         # Run the Docker container
                         echo "Running the Docker container..."
-                        docker run --name api_running -p 8000:8000 -d api
+                        sudo docker run --name api_running -p 8000:8000 -d api
                         '''
 
                         withChecks('Run Docker Container') {
