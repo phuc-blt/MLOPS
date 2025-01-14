@@ -48,7 +48,7 @@ pipeline {
 
                             # Build the Docker image
                             echo "Building the Docker image..."
-                            sudo docker build -t api .
+                            sudo docker build -t app-api .
                             '''
 
                             withChecks('Build Docker Image') {
@@ -83,7 +83,7 @@ pipeline {
 
                         # Run the Docker container
                         echo "Running the Docker container..."
-                        sudo docker run --name api_running -p 8000:8000 -d api
+                        sudo docker run app-api
                         '''
 
                         withChecks('Run Docker Container') {
