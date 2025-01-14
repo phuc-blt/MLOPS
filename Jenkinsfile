@@ -83,7 +83,7 @@ pipeline {
 
                         # Run the Docker container
                         echo "Running the Docker container..."
-                        sudo docker run app-api
+                        sudo docker run-p 8000:8000 app-api
                         '''
 
                         withChecks('Run Docker Container') {
